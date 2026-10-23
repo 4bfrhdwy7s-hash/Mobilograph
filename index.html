@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOOD STUDIO | Мобилограф</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 8%;
+            background: #111;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            letter-spacing: 3px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: #c5a47e;
+        }
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px 20px;
+            background:
+                linear-gradient(#0007, #0009),
+                url("https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1600&q=85")
+                center/cover;
+        }
+        .hero p {
+            letter-spacing: 5px;
+            color: #ddd;
+            margin-bottom: 20px;
+        }
+        .hero h1 {
+            font-size: clamp(40px, 8vw, 85px);
+            margin-bottom: 20px;
+        }
+        .hero .description {
+            font-size: 17px;
+            letter-spacing: 1px;
+            line-height: 1.7;
+            max-width: 500px;
+        }
+        .button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 16px 30px;
+            background: #c5a47e;
+            color: #111;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+        section {
+            padding: 80px 8%;
+        }
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        .section-subtitle {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 45px;
+            line-height: 1.6;
+        }
+        .portfolio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .portfolio img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            transition: 0.4s;
+        }
+        .portfolio img:hover {
+            transform: scale(1.03);
+        }
+        .services {
+            background: #1b1b1b;
+        }
+        .service-list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .service-card {
+            padding: 35px 25px;
+            border: 1px solid #444;
+            text-align: center;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        .service-card:hover {
+            border-color: #c5a47e;
+        }
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #bbb;
+            line-height: 1.7;
+        }
+        .price {
+            color: #c5a47e;
+            font-size: 25px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .about {
+            text-align: center;
+            max-width: 850px;
+            margin: auto;
+            line-height: 1.9;
+            color: #ccc;
+        }
+        .about .section-title {
+            color: white;
+        }
+        .contact {
+            background: #1b1b1b;
+            text-align: center;
+        }
+        .contact p {
+            color: #ccc;
+            margin: 15px 0;
+        }
+        footer {
+            padding: 25px;
+            text-align: center;
+            color: #888;
+            font-size: 13px;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 20px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            nav a {
+                margin: 0;
+            }
+            .hero {
+                min-height: 75vh;
+            }
+            .hero p {
+                letter-spacing: 3px;
+            }
+            section {
+                padding: 60px 6%;
+            }
+            .portfolio {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+            .portfolio img {
+                height: 230px;
+            }
+            .service-list {
+                grid-template-columns: 1fr;
+            }
+            .section-title {
+                font-size: 29px;
+            }
+        }
+        @media (max-width: 400px) {
+            .portfolio {
+                grid-template-columns: 1fr;
+            }
+            .portfolio img {
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MOOD STUDIO.</div>
+        <nav>
+            <a href="#home">Главная</a>
+            <a href="#portfolio">Портфолио</a>
+            <a href="#services">Услуги</a>
+            <a href="#contact">Контакты</a>
+        </nav>
+    </header>
+    <main>
+        <section class="hero" id="home">
+            <p>MOBILE PHOTOGRAPHY</p>
+            <h1>ЛОВИ МОМЕНТ.</h1>
+            <div class="description">
+                Снимаю не просто видео, а эмоции,
+                атмосферу и истории, которые хочется пересматривать.
+            </div>
+            <a class="button"
+               href="https://wa.me/+77716821662">
+                ЗАПИСАТЬСЯ НА СЪЁМКУ
+            </a>
+        </section>
+        <section id="portfolio">
+            <h2 class="section-title">ПОРТФОЛИО</h2>
+            <p class="section-subtitle">
+                Моменты, которые остались в кадре.
+            </p>
+            <div class="portfolio">
+                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=700&q=80"
+                     alt="Fashion съёмка">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=700&q=80"
+                     alt="Портретная съёмка">
+                <img src="https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=700&q=80"
+                     alt="Событие">
+                <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=700&q=80"
+                     alt="Fashion видео">
+                <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=700&q=80"
+                     alt="Мероприятие">
+                <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=700&q=80"
+                     alt="Портрет">
+            </div>
+        </section>
+        <section class="services" id="services">
+            <h2 class="section-title">МОИ УСЛУГИ</h2>
+            <p class="section-subtitle">
+                Выбери формат съёмки для своей идеи.
+            </p>
+            <div class="service-list">
+                <div class="service-card">
+                    <h3>Reels / TikTok</h3>
+                    <p>
+                        Короткие видео для социальных сетей,
+                        монтаж и подбор музыки.
+                    </p>
+                    <div class="price">от 5 000 ₸</div>
+                </div>
+                <div class="service-card">
+                    <h3>Love Story</h3>
+                    <p>
+                        Романтичные видео для пар,
+                        свиданий и особенных моментов.
+                    </p>
+                    <div class="price">от 10 000 ₸</div>
+                </div>
+                <div class="service-card">
+                    <h3>Мероприятия</h3>
+                    <p>
+                        Дни рождения, вечеринки,
+                        праздники и другие события.
+                    </p>
+                    <div class="price">от 15 000 ₸</div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="about">
+                <h2 class="section-title">ОБО МНЕ</h2>
+                <p>
+                    Привет! Я мобилограф. Моя цель —
+                    передавать эмоции через видео и фотографии.
+                    Я создаю атмосферный контент для личных
+                    блогов, пар, мероприятий и бизнеса.
+                    Каждый кадр — маленькая история.
+                </p>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <h2 class="section-title">СОЗДАДИМ ТВОЮ ИСТОРИЮ?</h2>
+            <p>
+                Напиши мне, расскажи о своей идее,
+                и мы обсудим детали съёмки.
+            </p>
+            <a class="button"
+               href="https://wa.me/77000000000">
+                НАПИСАТЬ В WHATSAPP
+            </a>
+        </section>
+    </main>
+    <footer>
+        © 2026 MOOD STUDIO. Все права защищены.
+    </footer>
+</body>
+</html>
